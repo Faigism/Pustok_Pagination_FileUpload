@@ -22,7 +22,7 @@ namespace Pustok_DbStructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Authors", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Author", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,7 +31,6 @@ namespace Pustok_DbStructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
@@ -40,36 +39,7 @@ namespace Pustok_DbStructure.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.BookImages", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BooksId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImageName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("PosterStatus")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BooksId");
-
-                    b.ToTable("BookImages");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Books", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,26 +50,25 @@ namespace Pustok_DbStructure.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("AuthorsId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("CostPrice")
                         .HasColumnType("money");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("DiscountPercent")
-                        .HasColumnType("float");
+                    b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GenresId")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsNew")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
@@ -111,14 +80,39 @@ namespace Pustok_DbStructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorsId");
+                    b.HasIndex("AuthorId");
 
-                    b.HasIndex("GenresId");
+                    b.HasIndex("GenreId");
 
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.BookTags", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.BookImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool?>("PosterStatus")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BookImages");
+                });
+
+            modelBuilder.Entity("Pustok_DbStructure.Entities.BookTag", b =>
                 {
                     b.Property<int>("BookId")
                         .HasColumnType("int");
@@ -142,26 +136,23 @@ namespace Pustok_DbStructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Title1")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("Title2")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Feature");
+                    b.ToTable("Features");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Genres", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -170,118 +161,12 @@ namespace Pustok_DbStructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.OrderItems", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BooksId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("OrdersId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("UnitCostPrice")
-                        .HasColumnType("money");
-
-                    b.Property<double>("UnitDiscountPercent")
-                        .HasColumnType("float");
-
-                    b.Property<decimal>("UnitSalePrice")
-                        .HasColumnType("money");
-
-                    b.HasKey("OrderId", "BookId");
-
-                    b.HasIndex("BooksId");
-
-                    b.HasIndex("OrdersId");
-
-                    b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Orders", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Products", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<byte>("Discount")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("ImageName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("money");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Pustok_DbStructure.Entities.Slider", b =>
@@ -292,7 +177,13 @@ namespace Pustok_DbStructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Button")
+                    b.Property<string>("BtnText")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("BtnUrl")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -309,8 +200,8 @@ namespace Pustok_DbStructure.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<bool>("SliderId")
-                        .HasColumnType("bit");
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
 
                     b.Property<string>("Txt")
                         .HasMaxLength(100)
@@ -318,10 +209,10 @@ namespace Pustok_DbStructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Slider");
+                    b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Tags", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Tag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -338,24 +229,17 @@ namespace Pustok_DbStructure.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.BookImages", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Book", b =>
                 {
-                    b.HasOne("Pustok_DbStructure.Entities.Books", null)
-                        .WithMany("BookImages")
-                        .HasForeignKey("BooksId");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Books", b =>
-                {
-                    b.HasOne("Pustok_DbStructure.Entities.Authors", "Authors")
+                    b.HasOne("Pustok_DbStructure.Entities.Author", "Authors")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorsId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pustok_DbStructure.Entities.Genres", "Genres")
+                    b.HasOne("Pustok_DbStructure.Entities.Genre", "Genres")
                         .WithMany("Books")
-                        .HasForeignKey("GenresId")
+                        .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -364,15 +248,24 @@ namespace Pustok_DbStructure.Migrations
                     b.Navigation("Genres");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.BookTags", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.BookImage", b =>
                 {
-                    b.HasOne("Pustok_DbStructure.Entities.Books", "Book")
+                    b.HasOne("Pustok_DbStructure.Entities.Book", null)
+                        .WithMany("BookImages")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Pustok_DbStructure.Entities.BookTag", b =>
+                {
+                    b.HasOne("Pustok_DbStructure.Entities.Book", "Book")
                         .WithMany("BookTags")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pustok_DbStructure.Entities.Tags", "Tag")
+                    b.HasOne("Pustok_DbStructure.Entities.Tag", "Tag")
                         .WithMany("BookTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -383,42 +276,24 @@ namespace Pustok_DbStructure.Migrations
                     b.Navigation("Tag");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.OrderItems", b =>
-                {
-                    b.HasOne("Pustok_DbStructure.Entities.Books", null)
-                        .WithMany("OrderItems")
-                        .HasForeignKey("BooksId");
-
-                    b.HasOne("Pustok_DbStructure.Entities.Orders", null)
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrdersId");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Authors", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Author", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Books", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Book", b =>
                 {
                     b.Navigation("BookImages");
 
                     b.Navigation("BookTags");
-
-                    b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Genres", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Genre", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Orders", b =>
-                {
-                    b.Navigation("OrderItems");
-                });
-
-            modelBuilder.Entity("Pustok_DbStructure.Entities.Tags", b =>
+            modelBuilder.Entity("Pustok_DbStructure.Entities.Tag", b =>
                 {
                     b.Navigation("BookTags");
                 });

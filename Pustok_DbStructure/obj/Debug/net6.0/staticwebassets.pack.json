@@ -393,6 +393,10 @@
       "PackagePath": "staticwebassets\\assets\\image\\products\\product-details-5.jpg"
     },
     {
+      "Id": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\wwwroot\\assets\\js\\Main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\Main.js"
+    },
+    {
       "Id": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\wwwroot\\assets\\js\\ajax-mail.js",
       "PackagePath": "staticwebassets\\assets\\js\\ajax-mail.js"
     },

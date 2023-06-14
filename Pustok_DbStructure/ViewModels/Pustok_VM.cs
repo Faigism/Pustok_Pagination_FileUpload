@@ -4,8 +4,10 @@ namespace Pustok_DbStructure.ViewModels
 {
     public class Pustok_VM
     {
-        public ICollection<Slider> sliders { get; set; }
-        public ICollection<Feature> features { get; set; }
-        public ICollection<Products> products { get; set; }
+        public List<Slider> sliders { get; set; }
+        public List<Feature> features { get; set; }
+        public List<Book> featuredBooks { get; set; }
+        public List<Book> newBooks { get; set; }
+        public List<Book> discountBooks { get; set; }
     }
 }

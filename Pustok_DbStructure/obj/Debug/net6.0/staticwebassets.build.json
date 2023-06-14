@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a0Q/bkwDnBP66xlAz/o+CFlM7IPS7lO1pbHgGfPyB8k=",
+  "Hash": "fxeKMdB3dNSZ1WAlRC8/N7Jp9mXEG55vaw3Ga8XBpqY=",
   "Source": "Pustok_DbStructure",
   "BasePath": "_content/Pustok_DbStructure",
   "Mode": "Default",
@@ -1715,6 +1715,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\custom.js"
+    },
+    {
+      "Identity": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\wwwroot\\assets\\js\\Main.js",
+      "SourceId": "Pustok_DbStructure",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\wwwroot\\",
+      "BasePath": "_content/Pustok_DbStructure",
+      "RelativePath": "assets/js/Main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\Main.js"
     },
     {
       "Identity": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\wwwroot\\assets\\js\\plugins.js",
