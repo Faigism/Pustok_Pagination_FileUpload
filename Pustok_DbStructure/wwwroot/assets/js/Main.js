@@ -1,10 +1,24 @@
-﻿$(document).on("click", ".modal-btn", function (e) {
+$(document).on("click", ".basket-add-btn", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
-    fetch(url).then(response => response.text())
-        .then(data => {
-            $("#quickModal .modal-dialog").html(data)
-        })
+    let url = $(this).attr("href")
+    fetch(url).then(response => {
+        if (!response.ok) {
+            alert("Error!!")
+        }
+        else {
+            return response.text()
+        }
+    }).then(data => {
+        $("#basketCart").html(data)
+    })
+})
 
-    $("#quickModal").modal("show")
-});
+$(document).on("click", ".cross-btn", function (e) {
+    e.preventDefault();
+    let url = $(this).attr("href")
+    fetch(url).then(response => {
+       return response.text()
+    }).then(data => {
+        $(".cart-dropdown-block").html(data)
+    })
+})

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\Pustok_DbStructure.csproj": {}
+    "C:\\Users\\faiqi\\OneDrive\\Desktop\\Pustok_Practice\\Pustok_DbStructure3\\Pustok_DbStructure\\Pustok_DbStructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\Pustok_DbStructure.csproj": {
+    "C:\\Users\\faiqi\\OneDrive\\Desktop\\Pustok_Practice\\Pustok_DbStructure3\\Pustok_DbStructure\\Pustok_DbStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\Pustok_DbStructure.csproj",
+        "projectUniqueName": "C:\\Users\\faiqi\\OneDrive\\Desktop\\Pustok_Practice\\Pustok_DbStructure3\\Pustok_DbStructure\\Pustok_DbStructure.csproj",
         "projectName": "Pustok_DbStructure",
-        "projectPath": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\Pustok_DbStructure.csproj",
+        "projectPath": "C:\\Users\\faiqi\\OneDrive\\Desktop\\Pustok_Practice\\Pustok_DbStructure3\\Pustok_DbStructure\\Pustok_DbStructure.csproj",
         "packagesPath": "C:\\Users\\faiqi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faiqi\\source\\Pustok_DbStructure\\Pustok_DbStructure\\obj\\",
+        "outputPath": "C:\\Users\\faiqi\\OneDrive\\Desktop\\Pustok_Practice\\Pustok_DbStructure3\\Pustok_DbStructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,7 +60,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.14, )"
             }
           },
           "imports": [
