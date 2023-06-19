@@ -1,0 +1,47 @@
+﻿@model List<Author>
+@{
+    ViewData["Title"] = "Index";
+    int dataOrder = 0;
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Authors</h1> <a class="btn btn-primary" asp-controller="author" asp-action="create">Create Author</a>
+        </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">BookCount</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        dataOrder++;
+                        <tr>
+                            <th scope="row">@dataOrder</th>
+                            <td>@item.FullName</td>
+                            <td>@item.Books.Count</td>
+                            <td>
+                                <a asp-controller="author" asp-action="update" asp-route-id="@item.Id" class="btn btn-warning">
+                                    Edit
+                                </a>
+                                <a asp-controller="author" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

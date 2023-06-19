@@ -11,7 +11,13 @@ builder.Services.AddDbContext<PustokDb_Contex>(opt =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<LayoutService>();
 var app = builder.Build();
+
+app.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+    );
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
 app.UseStaticFiles();
 
 app.Run();
