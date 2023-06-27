@@ -1,4 +1,7 @@
-﻿namespace Pustok_DbStructure.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Pustok_DbStructure.Entities
 {
     public class BookTag
     {

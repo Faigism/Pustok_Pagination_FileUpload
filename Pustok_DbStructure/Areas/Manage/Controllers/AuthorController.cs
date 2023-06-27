@@ -1,22 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Pustok_DbStructure.Areas.Manage.ViewModels;
 using Pustok_DbStructure.DAL;
 using Pustok_DbStructure.Entities;
+using Pustok_DbStructure.Helpers;
 
 namespace Pustok_DbStructure.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class AuthorController:Controller
+    public class AuthorController : Controller
     {
         private readonly PustokDb_Contex _context;
+        private readonly IWebHostEnvironment _env;
 
-        public AuthorController(PustokDb_Contex context)
+        public AuthorController(PustokDb_Contex context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1, string search = null)
         {
-            return View(_context.Authors.Include(x=>x.Books).ToList());
+            ViewBag.Search = search;
+            var query = _context.Authors.Include(x => x.Books).AsQueryable();
+            if (search != null) query = query.Where(x => x.FullName.Contains(search));
+
+            return View(PaginatedList<Author>.Create(query, page, 2));
         }
         public IActionResult Create()
         {
@@ -25,62 +34,67 @@ namespace Pustok_DbStructure.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Create(Author author)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                if(_context.Authors.Any(x=>x.FullName == author.FullName))
-                {
-                    ModelState.AddModelError("Name", "Author artiq movcuddur..");
-                }
-                else
-                {
-                    _context.Authors.Add(author);
-                    _context.SaveChanges();
-                    return RedirectToAction("Index");
-                }
+                ModelState.AddModelError("ImageFile", "Zəhmət olmasa faylı düzgün daxil edin. Fayl yalnız 'jpeg' və 'png' formatında ola bilər");
+                return View();
             }
-            return View();
-        }
-        public IActionResult Delete(int id)
-        {
-            var author = _context.Authors.Find(id);
-            if(author == null)
+            
+            if (author.ImageFile == null)
             {
-                return NotFound();
+                ModelState.AddModelError("ImageFile", "ImageFile boş ola bilməz..");
+                return View();
             }
-            _context.Authors.Remove(author);
+            
+            if (author.ImageFile.ContentType != "image/jpeg" && author.ImageFile.ContentType != "image/png")
+            {
+                ModelState.AddModelError("ImageFile", "Imagefile yalnız 'jpeg', 'png' formatında ola bilər..");
+                return View();
+            }
+            author.ImageName = FileManager.Save(author.ImageFile, _env.WebRootPath, "manage/uploads/authors");
+            _context.Authors.Add(author);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult Update(int id)
+        public IActionResult Edit(int id)
         {
-            var author2 = _context.Authors.Find(id);
-            if (author2 == null)
+            Author author = _context.Authors.Find(id);
+            if (author == null)
             {
-                return NotFound();
+                return View("error");
             }
-            return View(author2);
+            return View(author);
         }
         [HttpPost]
-        public IActionResult Update(Author author)
+        public IActionResult Edit(Author author)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(author);
             }
-            var author3 = _context.Authors.FirstOrDefault(x => x.FullName == author.FullName);
-            if (author3 != null && author3.Id != author.Id)
+            Author existAuthor = _context.Authors.Find(author.Id);
+            if (existAuthor == null)
             {
-                ModelState.AddModelError("Name", "Author artiq movcuddur..");
-                return View();
+                return View("error");
             }
-            var updateAuthor = _context.Authors.FirstOrDefault(x => x.Id==author.Id);
-            if (updateAuthor == null)
+            string removableImageName = null;
+            if(author.ImageFile!= null)
             {
-                return NotFound();
+                if (author.ImageFile.ContentType != "image/jpeg" && author.ImageFile.ContentType != "image/png")
+                {
+                    ModelState.AddModelError("ImageFile", "Şəkil yalnız 'jpeg' və 'png' formatında ola bilər");
+                    author.ImageName = existAuthor.ImageName;
+                    return View(author);
+                }
+                removableImageName = existAuthor.ImageName;
+                existAuthor.ImageName = FileManager.Save(author.ImageFile, _env.WebRootPath, "manage/uploads/authors");
             }
-            updateAuthor.FullName = author.FullName;
+            existAuthor.FullName = author.FullName;
             _context.SaveChanges();
+            if (removableImageName != null) FileManager.Delete(_env.WebRootPath, "manage/uploads/authors", removableImageName);
             return RedirectToAction("Index");
         }
+        
+
     }
 }
