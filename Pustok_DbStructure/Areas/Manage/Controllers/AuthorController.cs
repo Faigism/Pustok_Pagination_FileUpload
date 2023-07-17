@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Pustok_DbStructure.Areas.Manage.ViewModels;
 using Pustok_DbStructure.DAL;
 using Pustok_DbStructure.Entities;
 using Pustok_DbStructure.Helpers;
+using System.Data;
 
 namespace Pustok_DbStructure.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "Admin, SuperAdmin")]
     [Area("manage")]
     public class AuthorController : Controller
     {
@@ -39,13 +42,13 @@ namespace Pustok_DbStructure.Areas.Manage.Controllers
                 ModelState.AddModelError("ImageFile", "Zəhmət olmasa faylı düzgün daxil edin. Fayl yalnız 'jpeg' və 'png' formatında ola bilər");
                 return View();
             }
-            
+
             if (author.ImageFile == null)
             {
                 ModelState.AddModelError("ImageFile", "ImageFile boş ola bilməz..");
                 return View();
             }
-            
+
             if (author.ImageFile.ContentType != "image/jpeg" && author.ImageFile.ContentType != "image/png")
             {
                 ModelState.AddModelError("ImageFile", "Imagefile yalnız 'jpeg', 'png' formatında ola bilər..");
@@ -78,7 +81,7 @@ namespace Pustok_DbStructure.Areas.Manage.Controllers
                 return View("error");
             }
             string removableImageName = null;
-            if(author.ImageFile!= null)
+            if (author.ImageFile != null)
             {
                 if (author.ImageFile.ContentType != "image/jpeg" && author.ImageFile.ContentType != "image/png")
                 {
@@ -94,7 +97,5 @@ namespace Pustok_DbStructure.Areas.Manage.Controllers
             if (removableImageName != null) FileManager.Delete(_env.WebRootPath, "manage/uploads/authors", removableImageName);
             return RedirectToAction("Index");
         }
-        
-
     }
 }

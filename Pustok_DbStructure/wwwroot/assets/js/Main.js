@@ -15,10 +15,9 @@ $(document).on("click", ".basket-add-btn", function (e) {
 
 $(document).on("click", ".cross-btn", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href")
-    fetch(url).then(response => {
-       return response.text()
-    }).then(data => {
+    let url = $(this).getAttribute("href")
+    fetch(url).then(response => response.text()
+    ).then(data => {
         $(".cart-dropdown-block").html(data)
     })
 })

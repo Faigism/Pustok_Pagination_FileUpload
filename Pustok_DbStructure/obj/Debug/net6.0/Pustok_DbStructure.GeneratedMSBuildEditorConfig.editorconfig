@@ -9,85 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pustok_DbStructure
 build_property.RootNamespace = Pustok_DbStructure
-build_property.ProjectDir = C:\Users\faiqi\OneDrive\Desktop\Pustok_Practice\Pustok_DbStructure3\Pustok_DbStructure\
+build_property.ProjectDir = C:\Users\faiqi\OneDrive\Desktop\Pustok_Site\Pustok_DbStructure3\Pustok_DbStructure\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\faiqi\OneDrive\Desktop\Pustok_Practice\Pustok_DbStructure3\Pustok_DbStructure
+build_property.MSBuildProjectDirectory = C:\Users\faiqi\OneDrive\Desktop\Pustok_Site\Pustok_DbStructure3\Pustok_DbStructure
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Create.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Edit.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Index.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Dashboard/Index.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Create.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Edit.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Index.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Genre/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Shared/Error.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Shared/_Layout.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Slider/Create.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Slider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Slider/Index.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Slider/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/_ViewImports.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/_ViewStart.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Areas/Manage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/Home/Index.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Account/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_BasketPartial.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_BasketPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_BooksCardPartial.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_BooksCardPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rc0NhcmRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_Layout.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/_ViewImports.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/Shared/_MemberUpdateFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW1iZXJVcGRhdGVGb3JtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/faiqi/OneDrive/Desktop/Pustok_Practice/Pustok_DbStructure3/Pustok_DbStructure/Views/_ViewStart.cshtml]
+[C:/Users/faiqi/OneDrive/Desktop/Pustok_Site/Pustok_DbStructure3/Pustok_DbStructure/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
